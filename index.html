@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUTRIBOT - El robot que nutrirá sociedades</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Montserrat:wght@400;600;700;800;900&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==================== ENCABEZADO / NAV ==================== -->
+    <header class="top-header">
+        <nav class="nav-pill" aria-label="Navegación principal">
+            <a href="#inicio" class="nav-link active">Inicio</a>
+            <a href="#problematica" class="nav-link">Problemática</a>
+            <a href="#nosotros" class="nav-link">Nosotros</a>
+            <a href="#solucion" class="nav-link">Funcionamiento</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================== PÁGINA 1: HERO & ROBOT INTERACTIVO ==================== -->
+        <section id="inicio" class="section-wrapper">
+            
+            <!-- Banner Superior con Slogan e Iconos de Redes -->
+            <div class="hero-banner">
+                <div class="hero-banner-overlay">
+                    <h2 class="hero-slogan">El robot<br>que nutrirá<br>sociedades</h2>
+                    <div class="banner-socials">
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar TikTok de NutriBot" title="TikTok Oficial">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Instagram de NutriBot" title="Instagram Oficial">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar X de NutriBot" title="X / Twitter Oficial">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grilla Principal de 3 Columnas -->
+            <div class="hero-grid-3">
+                
+                <!-- Columna Izquierda: Marca y Call To Action (CTA) -->
+                <div class="hero-col-left">
+                    <div class="wire-box brand-box">
+                        <h1 class="brand-title">NUTRIBOT</h1>
+                    </div>
+
+                    <div class="cta-goal-box">
+                        <p class="cta-label">¡Conocé nuestro objetivo!</p>
+                        <a href="#problematica" class="btn-solid">Problemática a resolver</a>
+                    </div>
+                </div>
+
+                <!-- Columna Central: Robot NutriBot Físico e Interactivo -->
+                <div class="hero-col-center">
+                    <div class="nutribot-chassis" aria-label="Simulador Interactivo NutriBot">
+                        
+                        <!-- Sensor Ultrasónico HC-SR04 en la parte superior -->
+                        <div class="hc-sr04-head" id="ultrasonicSensor" title="Hacé clic para simular acercar un plato al Sensor Ultrasónico HC-SR04">
+                            <div class="sensor-transducer"><div class="sensor-core"></div></div>
+                            <div class="sensor-transducer"><div class="sensor-core"></div></div>
+                        </div>
+
+                        <!-- Cuerpo Negro 3D con Frente Blanco y Borde Verde -->
+                        <div class="chassis-body">
+                            <div class="chassis-side-vents"></div>
+                            <div class="chassis-cables">
+                                <div class="cable-plug"></div>
+                                <div class="cable-plug"></div>
+                            </div>
+
+                            <div class="front-faceplate">
+                                <!-- 3 LEDs de Estado (P0 Verde, P1 Rojo, P2 Amarillo) -->
+                                <div class="leds-row">
+                                    <div class="led-unit">
+                                        <div class="led-bulb led-green active" id="ledGreen" title="Pin P0: Alimento Nutritivo"></div>
+                                    </div>
+                                    <div class="led-unit">
+                                        <div class="led-bulb led-red" id="ledRed" title="Pin P1: Alimento No Nutritivo"></div>
+                                    </div>
+                                    <div class="led-unit">
+                                        <div class="led-bulb led-yellow" id="ledYellow" title="Pin P2: Alimento Desconocido"></div>
+                                    </div>
+                                </div>
+
+                                <div class="robot-brand-label">NUTRI-BOT</div>
+
+                                <!-- Pantalla LCD Matricial -->
+                                <div class="lcd-bezel">
+                                    <div class="lcd-screen" role="status" aria-live="polite">
+                                        <div class="lcd-line" id="lcdLine1">&gt;&gt; tomate</div>
+                                        <div class="lcd-line" id="lcdLine2">NUTRITIVO</div>
+                                    </div>
+                                </div>
+
+                                <!-- Teclado QWERTY Integrado Funcional -->
+                                <div class="qwerty-pad" id="qwertyPad">
+                                    <div class="kb-row">
+                                        <button type="button" class="kb-key" data-key="Q">Q</button>
+                                        <button type="button" class="kb-key" data-key="W">W</button>
+                                        <button type="button" class="kb-key" data-key="E">E</button>
+                                        <button type="button" class="kb-key" data-key="R">R</button>
+                                        <button type="button" class="kb-key" data-key="T">T</button>
+                                        <button type="button" class="kb-key" data-key="Y">Y</button>
+                                        <button type="button" class="kb-key" data-key="U">U</button>
+                                        <button type="button" class="kb-key" data-key="I">I</button>
+                                        <button type="button" class="kb-key" data-key="O">O</button>
+                                        <button type="button" class="kb-key" data-key="P">P</button>
+                                    </div>
+                                    <div class="kb-row">
+                                        <button type="button" class="kb-key" data-key="A">A</button>
+                                        <button type="button" class="kb-key" data-key="S">S</button>
+                                        <button type="button" class="kb-key" data-key="D">D</button>
+                                        <button type="button" class="kb-key" data-key="F">F</button>
+                                        <button type="button" class="kb-key" data-key="G">G</button>
+                                        <button type="button" class="kb-key" data-key="H">H</button>
+                                        <button type="button" class="kb-key" data-key="J">J</button>
+                                        <button type="button" class="kb-key" data-key="K">K</button>
+                                        <button type="button" class="kb-key" data-key="L">L</button>
+                                    </div>
+                                    <div class="kb-row">
+                                        <button type="button" class="kb-key" data-key="Z">Z</button>
+                                        <button type="button" class="kb-key" data-key="X">X</button>
+                                        <button type="button" class="kb-key" data-key="C">C</button>
+                                        <button type="button" class="kb-key" data-key="V">V</button>
+                                        <button type="button" class="kb-key" data-key="B">B</button>
+                                        <button type="button" class="kb-key" data-key="N">N</button>
+                                        <button type="button" class="kb-key" data-key="M">M</button>
+                                        <button type="button" class="kb-key kb-enter" data-key="ENTER">ENTER</button>
+                                    </div>
+                                    <div class="kb-row kb-aux-row">
+                                        <button type="button" class="kb-key kb-space" data-key=" ">ESPACIO</button>
+                                        <button type="button" class="kb-key kb-back" data-key="BACK">BORRAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controles Rápidos y Botones A y B de Micro:bit -->
+                    <div class="robot-interactive-controls">
+                        <div class="control-pills-group">
+                            <span class="mini-label">Testeo Micro:bit:</span>
+                            <button type="button" class="chip-btn chip-microbit" id="btnMicroA" title="Prueba Botón A de la Micro:bit">
+                                <i class="fas fa-microchip"></i> Botón A (Lechuga)
+                            </button>
+                            <button type="button" class="chip-btn chip-microbit" id="btnMicroB" title="Prueba Botón B de la Micro:bit">
+                                <i class="fas fa-microchip"></i> Botón B (Gaseosa)
+                            </button>
+                            <button type="button" class="chip-btn chip-sensor" id="btnSensorSim" title="Simular acercamiento de plato al HC-SR04">
+                                <i class="fas fa-satellite-dish"></i> Acercar Plato
+                            </button>
+                        </div>
+                        <div class="control-pills-group">
+                            <span class="mini-label">Probar rápido:</span>
+                            <button type="button" class="chip-btn" onclick="quickTestFood('tomate')">Tomate</button>
+                            <button type="button" class="chip-btn" onclick="quickTestFood('carne al horno')">Carne al horno</button>
+                            <button type="button" class="chip-btn" onclick="quickTestFood('milanesa')">Milanesa</button>
+                            <button type="button" class="chip-btn" onclick="quickTestFood('alfajor')">Alfajor</button>
+                            <button type="button" class="chip-btn" onclick="quickTestFood('empanada')">Empanada (?)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Instructivo y Funcionamiento -->
+                <div class="hero-col-right">
+                    <div class="wire-box right-cta-card">
+                        <h2 class="right-card-title">¿Querés armar<br>tu NutriBot?</h2>
+
+                        <a href="https://docs.google.com/document/d/1LaVpXC9QWrOBxVfUTQiRHadx5rOf3dOksYcRxKdId8s/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-solid">
+                            Accede al instructivo<br>oficial de construcción
+                        </a>
+
+                        <a href="#solucion" class="btn-solid">
+                            Información de<br>funcionamiento
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== PÁGINA 2: SECCIÓN DE CONCIENTIZACIÓN ==================== -->
+        <section id="problematica" class="section-wrapper">
+            <div class="grid-2-columns">
+                
+                <!-- Izquierda: Collage de fotos exacto al Wireframe -->
+                <div class="collage-container">
+                    <div class="collage-top">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Niños almorzando en comedor comunitario">
+                    </div>
+                    <div class="collage-bottom">
+                        <div class="collage-left-stack">
+                            <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=400&q=80" alt="Plato de comida en comedor infantil">
+                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=400&q=80" alt="Niños recibiendo merienda nutritiva">
+                        </div>
+                        <div class="collage-right-tall">
+                            <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=500&q=80" alt="Comedor escolar compartiendo almuerzo">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Derecha: Título en Caja y Texto de Concientización -->
+                <div class="awareness-text-col">
+                    <div class="wire-box section-heading-box">
+                        <h2 class="section-heading">La malnutrición<br>como contexto<br>sociocultural</h2>
+                    </div>
+
+                    <div class="text-body-stack">
+                        <p class="wire-paragraph">
+                            según UNICEF, "Argentina enfrenta desde hace varios años una doble carga de malnutrición, esto es la coexistencia de la desnutrición y la sobrenutrición (sobrepeso y obesidad) en un mismo país, comunidad o incluso en una misma persona que, por ejemplo, sufre sobrepeso y baja talla o anemia por carencia de micronutrientes", esto es debido a varios "determinantes como la pobreza, entornos no saludables, falta de información, regulaciones insuficientes en cuanto a oferta de productos ultraprocesados".
+                        </p>
+                        <p class="wire-paragraph">
+                            NUTRIBOT tiene como objetivo ayudar a aquellas organizaciones como Cáritas, CONIN y la Red Argentina de Bancos de Alimentos en el armado de viandas o almuerzos nutritivos, identificando alimentos altos en nutrición o bajos en nutrición, según el plato nutricional establecido por el Gobierno Nacional, en el cual las verduras, las frutas y el agua tienen un posicionamiento importante, mientras que los dulces y grasas son tomados como opcionales que no deberían constituir todas las comidas nutritivas.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== PÁGINA 3: SOBRE NOSOTROS ==================== -->
+        <section id="nosotros" class="section-wrapper">
+            <div class="grid-2-columns">
+                
+                <!-- Izquierda: Historia del Equipo -->
+                <div class="about-text-col">
+                    <p class="wire-paragraph wire-paragraph-large">
+                        Decidimos crear NUTRIBOT entre tres amigos: Lourdes Kahale, Nicolás Baeza y Bruno Barbarelli. Creemos que el trabajo en equipo es la mejor forma de solucionar las metas que apuntan al bien común. Surgió en el marco de un proyecto escolar, pero ahora buscamos expandirlo como emprendimiento propio y de industria nacional, con el objetivo de otorgar nuestros servicios de programación y diseño a una de las problemáticas más relevantes de Argentina: la malnutrición.
+                    </p>
+                </div>
+
+                <!-- Derecha: Imagen de Trabajo en Equipo con Caja Superpuesta -->
+                <div class="about-img-wrapper">
+                    <div class="framed-photo">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Equipo planificando el proyecto NutriBot con gráficos y computadora">
+                    </div>
+                    <div class="wire-box floating-badge-box">
+                        <h2 class="section-heading">Sobre<br>nosotros</h2>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== PÁGINA 4: ¿CÓMO FUNCIONA NUTRIBOT? (CON IMAGEN VISIBLE Y ESTABLE) ==================== -->
+        <section id="solucion" class="section-wrapper">
+            <div class="grid-2-columns">
+                
+                <!-- Izquierda: Imagen actualizada del prototipo de robótica y tecnología -->
+                <div class="solution-img-col">
+                    <div class="framed-photo">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="Prototipo de robótica y programación en funcionamiento">
+                    </div>
+                </div>
+
+                <!-- Derecha: Explicación de Funcionamiento -->
+                <div class="solution-text-col">
+                    <div class="wire-box section-heading-box">
+                        <h2 class="section-heading">¿Cómo funciona<br><span class="heading-xl">NUTRIBOT</span>?</h2>
+                    </div>
+
+                    <div class="text-body-stack">
+                        <p class="wire-paragraph wire-paragraph-large">
+                            Decidimos darle a nuestro robot el nombre de NutriBot, ya que su función será la de un "nutricionista inteligente". Su funcionamiento sería el siguiente: el usuario insertaría a través de un teclado cada alimento que su plato o vianda contiene (o el alimento cualquiera al que le gustaría saber si es nutritivo o no). Si ese alimento insertado está en la base de datos del robot en la lista de "nutrición" (es decir, alimentos nutritivos), se encenderá un led verde, indicando eso. Si está en la lista de "desnutrición" (alimento no nutritivo), se encenderá el led rojo. Si ese alimento no está cargado en la base de datos, se encenderá el led amarillo, indicando que es un alimento desconocido, y aparecerá la palabra "desconocido" en la pantalla de la microbit.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== PÁGINA 5: CONTACTO ==================== -->
+        <section id="contacto" class="section-wrapper contact-section-wrapper">
+            <div class="wire-box contact-card-wire">
+                <h2 class="contact-main-heading">¡CONTÁCTANOS!</h2>
+
+                <div class="contact-details-list">
+                    <a href="tel:+541112345678" class="contact-line">
+                        <i class="fas fa-phone-alt"></i> 11 1234-5678
+                    </a>
+                    <a href="mailto:nutribot@gmail.com" class="contact-line">
+                        <i class="fas fa-envelope"></i> nutribot@gmail.com
+                    </a>
+                    <a href="https://maps.google.com/?q=Av.+San+Martin+2345,+Villa+Devoto,+Buenos+Aires" target="_blank" rel="noopener noreferrer" class="contact-line">
+                        <i class="fas fa-map-marker-alt"></i> Av. San Martín 2345, Villa Devoto
+                    </a>
+                </div>
+
+                <div class="contact-socials-row">
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok de NutriBot" title="TikTok Oficial">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de NutriBot" title="Instagram Oficial">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X de NutriBot" title="X Oficial">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-brand">NUTRIBOT &copy; 2026 — El robot que nutrirá sociedades</p>
+            <p class="footer-authors">Creado por Lourdes Kahale, Nicolás Baeza y Bruno Barbarelli</p>
+            <div class="footer-quick-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#problematica">Problemática</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#solucion">Funcionamiento</a>
+                <a href="https://docs.google.com/document/d/1LaVpXC9QWrOBxVfUTQiRHadx5rOf3dOksYcRxKdId8s/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Instructivo Oficial</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
